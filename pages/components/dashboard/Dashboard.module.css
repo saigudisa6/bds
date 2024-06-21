@@ -1,0 +1,15 @@
+.dashTitle{
+    display: flex;
+    justify-content: center
+}
+
+.fullCont{
+    background-color: blue;
+    height: 1000%;
+    display:flex;
+}
+
+.left, .right{
+    width: 50%;
+
+}

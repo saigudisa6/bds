@@ -1,0 +1,29 @@
+.welcomeContainer{
+    margin:0 20px 0 20px;
+    height:800px;
+    gap: 75px;
+}
+
+.top, .welcomeContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.welcomeMsg{
+    font-size: 100px;
+}
+
+.welcomeBtn{
+    background-color: transparent;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.bottom{
+    display: flex;
+    width: 200px;
+    gap: 30px;
+}
