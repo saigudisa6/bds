@@ -1,22 +1,31 @@
 import { trpc } from "./trpc"
+import { ChartParams } from "@/pages/components/charts/Bar"
 
-interface StatsData{
-    stat:string,
-    playerData: 
-        {
-            name: string,
-            numStat: number
-        }[]
-}
-
-export function cleanStatsData(data: any) : StatsData{
+export function cleanStatsData(data: any, stat: string) : ChartParams{
     const fullData = []
     for(let i = 0; i < 5; i++){
-        const currPlayer = {
-            name: data.resultSet.rowSet[i][2],
-            numStat: data.resultSet.rowSet[i][24]
+
+        if(stat === 'PTS'){
+            const currPlayer = {
+                name: data.resultSet.rowSet[i][2],
+                points: data.resultSet.rowSet[i][24]
+            }
+            fullData.push(currPlayer)
         }
-        fullData.push(currPlayer)
+        if(stat === 'REB'){
+            const currPlayer = {
+                name: data.resultSet.rowSet[i][2],
+                points: data.resultSet.rowSet[i][18]
+            }
+            fullData.push(currPlayer)
+        }
+        if(stat === 'AST'){
+            const currPlayer = {
+                name: data.resultSet.rowSet[i][2],
+                points: data.resultSet.rowSet[i][19]
+            }
+            fullData.push(currPlayer)
+        }  
     }
     return {stat: 'Playoff Points', playerData: fullData}
 }

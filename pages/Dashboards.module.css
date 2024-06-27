@@ -1,7 +1,10 @@
 .dashBody{
     display: flex;
     flex-direction: column;
-    background-color: red;
     height: 50rem;
-    margin: 0 20px 0 20px;
+    /* margin: 0 20px 0 0; */
+}
+
+.tabs{
+    margin-left:20px;
 }

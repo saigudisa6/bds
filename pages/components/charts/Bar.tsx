@@ -46,15 +46,18 @@ const data = [
   },
 ];
 
-interface ChartParams{
+export interface ChartParams{
   stat: string,
   playerData: {
     name: string,
-    numStat: number
+    points?: number,
+    assists?: number,
+    rebounds?: number
   }[]
 }
 
 export default function BDSBar ({stat, playerData} : ChartParams) {
+    console.log(playerData)
     return (
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
@@ -69,10 +72,10 @@ export default function BDSBar ({stat, playerData} : ChartParams) {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
+          <XAxis dataKey="name" tick={{fontSize:10}}/>
           <YAxis />
           <Tooltip />
-          <Bar dataKey="numStat" fill="#8884d8" activeBar={<Rectangle fill="black" stroke="blue" />} />
+          <Bar dataKey={playerData[0].points ? "points" : "numStat"} fill="#8884d8" activeBar={<Rectangle fill="green" stroke="blue" />} />
         </BarChart>
       </ResponsiveContainer>
     );

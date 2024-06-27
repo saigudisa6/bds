@@ -1,4 +1,5 @@
 import styles from './Main.module.css'
+import Link from 'next/link'
 
 export default function MainPage(){
     return(
@@ -8,7 +9,7 @@ export default function MainPage(){
                 <div>Click to view daily-updated dashboards or ML-fueled basketball stories!</div>
             </div>
             <div className={styles.bottom}>
-                <button className={styles.welcomeBtn}>Dashboards</button>
+                <button className={styles.welcomeBtn}><Link className={styles.link} href='/dashboards'>Dashboards</Link></button>
                 <button className={styles.welcomeBtn}>Stories</button>
             </div>
         </div>
