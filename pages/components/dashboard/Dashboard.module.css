@@ -15,9 +15,9 @@
 }
 
 .inputs{
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     gap: 10px;
     height: 100%;
 }

@@ -19,8 +19,6 @@ type LeaderLineParams = {
 export default function LeaderLineChart({data, name} : LeaderLineParams) {
     let cleanedData = null;
 
-    window.alert(name)
-
     if(!data) return(<>Loading...</>)
     cleanedData = combinePlayoffAndRegular(data.regData, data.playoffData)
     let max = findMax(data.regData)
@@ -30,7 +28,7 @@ export default function LeaderLineChart({data, name} : LeaderLineParams) {
     return(
         <>
             <LineChart width={950} height={315} data={cleanedData}
-                margin={{ top: 20, right: 30, left: 0, bottom: 5 }}>
+                margin={{ top: 20, right: 30, left: 0, bottom: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="year" />
                 <YAxis domain={[0, Math.floor(max+(max/7))]}  label={{value: name, angle: -90, position: 'insideLeft', style: { textAnchor: 'middle', marginTop: 20, color: 'black' }}}/>

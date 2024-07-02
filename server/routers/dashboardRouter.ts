@@ -34,7 +34,7 @@ const getAllTimePlayersController =  async (input: GetAllTimePlayersInput) => {
     
     if(input.stat === 'REB' || input.stat === 'reb') input.stat = 'TRB'
     let fullStat = ''
-    switch(input.stat) {
+    switch(input.stat.toUpperCase()) {
         case 'PTS': fullStat='points'; break;
         case 'TRB': fullStat='rebounds'; break;
         case 'AST': fullStat='assists'; break;
@@ -56,10 +56,10 @@ const getAllTimePlayersController =  async (input: GetAllTimePlayersInput) => {
 
 const getYearlyStatsController = async (input: GetYearlyStats) => {
     let fullName = ''
+    console.log(input.stat)
     await getAllTimePlayersController({stat: input.stat}).then(data => {
         fullName = data[0].player
     })
-    console.log(fullName)
     if(fullName) fullName = (fullName.charAt(fullName.length - 1) == '*') ? fullName.substring(0, fullName.length - 1) : fullName
     fullName = fullName.split(' ').map(el => el.toLowerCase()).join('_')
     
