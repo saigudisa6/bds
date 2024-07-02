@@ -11,10 +11,10 @@ export default function Dashboards() {
             <Header/>
 
             <Tabs variant='soft-rounded' colorScheme='green' className={styles.tabs}>
-                <TabList>
-                    <Tab>Points</Tab>
-                    <Tab>Rebounds</Tab>
-                    <Tab>Assists</Tab>
+                <TabList className={styles.tablist}>
+                    <Tab className={styles.tab}>Points (Player)</Tab>
+                    <Tab className={styles.tab}>Rebounds (Player)</Tab>
+                    <Tab className={styles.tab}>Assists (Player)</Tab>
                 </TabList>
 
                 <TabPanels>

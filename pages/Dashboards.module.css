@@ -8,3 +8,12 @@
 .tabs{
     margin-left:20px;
 }
+
+.tab{
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.tablist{
+    gap: 20px;
+}

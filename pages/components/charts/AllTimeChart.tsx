@@ -2,7 +2,7 @@ import { Accordion, AccordionItem, StylesProvider } from "@chakra-ui/react"
 import styles from './AllTimeCharts.module.css'
 import { all } from "axios"
 
-export interface allTimePlayersParams{
+interface allTimePlayersParams{
     allTimePlayers: {
         rank: string,
         player: string,
